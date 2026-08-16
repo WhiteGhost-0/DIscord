@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    container_name: boba-bot
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./boba_data.json:/app/boba_data.json
