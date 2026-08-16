@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: boba-bot
+    runtime: docker
+    plan: free
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false         # set this manually in Render dashboard
+      - key: GROQ_API_KEY
+        sync: false         # set this manually in Render dashboard
+    disk:
+      name: boba-data
+      mountPath: /app
+      sizeGB: 1             # persistent disk so boba_data.json survives redeploys
